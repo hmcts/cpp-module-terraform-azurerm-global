@@ -493,7 +493,7 @@ locals {
     address_prefix-subnet-app-ext-01   = "10.91.67.0/24"
 
     # address_prefix-subnet-web-02  = "10.91.66.0/27"
-    # address_prefix-subnet-app-02  = "10.91.66.32/27"
+    address_prefix-subnet-app-02  = "10.91.66.32/27"
     # address_prefix-subnet-data-02 = "10.91.66.64/27"
 
     address_prefix-subnet-rc-common = "10.91.127.224/28"
@@ -509,8 +509,11 @@ locals {
     address_prefix-subnet-csfl      = "10.91.127.160/28"
     address_prefix-subnet-notifyatt = "10.91.127.112/28"
   }
-  nft-ccm-app-subnets = [
+  nft-ccm01-app-subnets = [
     local.nft-ccm-vnet-scheme.address_prefix-subnet-app-01,
+  ]
+  nft-ccm02-app-subnets = [
+    local.nft-ccm-vnet-scheme.address_prefix-subnet-app-02,
   ]
   nft-ccm-web-subnets = [
     local.nft-ccm-vnet-scheme.address_prefix-subnet-web-01,

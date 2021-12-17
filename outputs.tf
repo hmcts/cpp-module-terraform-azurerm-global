@@ -147,8 +147,12 @@ output "sit-ccm-app-subnets" {
   value = local.sit-ccm-app-subnets
 }
 
-output "nft-ccm-app-subnets" {
-  value = local.nft-ccm-app-subnets
+output "nft-ccm01-app-subnets" {
+  value = local.nft-ccm01-app-subnets
+}
+
+output "nft-ccm02-app-subnets" {
+  value = local.nft-ccm02-app-subnets
 }
 
 output "dev-ccm-web-subnets" {
