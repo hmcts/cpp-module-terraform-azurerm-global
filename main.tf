@@ -12,6 +12,14 @@ locals {
     owner           = "HMCTS-SP"
     timestamp       = formatdate("DDMMYY", timestamp())
   }
+  global_dynamic_tags = {
+    created_time    = var.tag_created_time
+    created_by      = var.tag_created_by
+    git_url         = var.tag_git_url
+    git_branch      = var.tag_git_branch
+    last_apply      = var.tag_last_apply
+    last_apply_by   = var.tag_last_apply_by
+  }
   locations = {
     uks = "uksouth"
     ukw = "ukwest"

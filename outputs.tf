@@ -15,6 +15,10 @@ output "global_tags" {
   value = local.global_tags
 }
 
+output "global_dynamic_tags" {
+  value = local.global_dynamic_tags
+}
+
 output "env" {
   value = local.env
 }
