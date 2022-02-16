@@ -293,7 +293,7 @@ locals {
     address_prefix-subnet-pg-pem     = "10.200.50.192/28"
     address_prefix-subnet-ngf-cc     = "10.200.63.16/29"
     address_prefix-subnet-appgw1     = "10.200.50.224/27"
-}
+  }
   mpd-imz-vnet-scheme = {
     address_space_vnet               = "10.200.64.0/20"
     address_prefix-subnet-ftps-inner = "10.200.64.32/27"
@@ -755,7 +755,7 @@ locals {
     address_prefix-subnet-data-01 = "172.30.2.0/24"
     address_space_dmz_vnet        = "192.168.240.0/24"
     address_prefix-subnet-waf     = "192.168.240.0/28"
-}
+  }
   prd-atl-vnet-scheme = {
     address_space_vnet            = "172.31.0.0/16"
     address_prefix-subnet-ops     = "172.31.10.0/24"
