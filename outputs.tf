@@ -182,3 +182,63 @@ output "sit-ccm-data-subnets" {
 output "nft-ccm-data-subnets" {
   value = local.nft-ccm-data-subnets
 }
+
+output "mpd-dmz-vnet-scheme" {
+  value = local.mpd-dmz-vnet-scheme
+}
+
+output "mpd-int-vnet-scheme" {
+  value = local.mpd-int-vnet-scheme
+}
+
+output "mpd-imz-vnet-scheme" {
+  value = local.mpd-imz-vnet-scheme
+}
+
+output "prp-int-vnet-scheme" {
+  value = local.prp-int-vnet-scheme
+}
+
+output "prp-ccm-app-subnets" {
+  value = local.prp-ccm-app-subnets
+}
+
+output "prx-int-vnet-scheme" {
+  value = local.prx-int-vnet-scheme
+}
+
+output "prp-int-bae-vnet-scheme" {
+  value = local.prp-int-bae-vnet-scheme
+}
+
+output "prp-atl-vnet-scheme" {
+  value = local.prp-atl-vnet-scheme
+}
+
+output "prd-atl-vnet-scheme" {
+  value = local.prd-atl-vnet-scheme
+}
+
+output "prd-int-vnet-scheme" {
+  value = local.prd-int-vnet-scheme
+}
+
+output "prd-ccm-app-subnets" {
+  value = local.prd-ccm-app-subnets
+}
+
+output "prp-rota-vnet-scheme" {
+  value = local.prp-rota-vnet-scheme
+}
+
+output "prd-rota-vnet-scheme" {
+  value = local.prd-rota-vnet-scheme 
+}
+
+output "idam-prp-vnet-scheme" {
+  value = local.idam-prp-vnet-scheme 
+}
+
+output "idam-prd-vnet-scheme" {
+  value = local.idam-prd-vnet-scheme 
+}
