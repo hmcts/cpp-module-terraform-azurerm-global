@@ -13,12 +13,12 @@ locals {
     timestamp       = formatdate("DDMMYY", timestamp())
   }
   global_dynamic_tags = {
-    created_time    = var.tag_created_time
-    created_by      = var.tag_created_by
-    git_url         = var.tag_git_url
-    git_branch      = var.tag_git_branch
-    last_apply      = var.tag_last_apply
-    last_apply_by   = var.tag_last_apply_by
+    created_time  = var.tag_created_time
+    created_by    = var.tag_created_by
+    git_url       = var.tag_git_url
+    git_branch    = var.tag_git_branch
+    last_apply    = var.tag_last_apply
+    last_apply_by = var.tag_last_apply_by
   }
   locations = {
     uks = "uksouth"
@@ -256,48 +256,49 @@ locals {
     address_prefix-subnet-docmosis   = "10.88.176.224/27"
   }
   mpd-dmz-vnet-scheme = {
-    address_space_vnet               = "10.200.32.0/20"
-    address_prefix-subnet-adminvpn   = "10.200.32.0/27"
-    address_prefix-subnet-dmzjumpl   = "10.200.32.32/27"
-    address_prefix-subnet-publishing = "10.200.32.64/27"
-    address_prefix-subnet-vpnusers   = "10.200.62.0/23"
-    address_prefix-subnet-vpnusers1  = "10.200.36.0/22"
-    address_prefix-subnet-vpnusers2  = "10.200.40.0/22"
-    address_prefix-subnet-ngf        = "10.200.32.96/27"
-    address_prefix-subnet-dmzntp     = "10.200.32.128/27"
+    address_space_vnet                    = "10.200.32.0/20"
+    address_prefix-subnet-adminvpn        = "10.200.32.0/27"
+    address_prefix-subnet-dmzjumpl        = "10.200.32.32/27"
+    address_prefix-subnet-publishing      = "10.200.32.64/27"
+    address_prefix-subnet-vpnusers        = "10.200.62.0/23"
+    address_prefix-subnet-vpnusers1       = "10.200.36.0/22"
+    address_prefix-subnet-vpnusers2       = "10.200.40.0/22"
+    address_prefix-subnet-ngf             = "10.200.32.96/27"
+    address_prefix-subnet-dmzntp          = "10.200.32.128/27"
     address_prefix-subnet-dmz-vul-scanner = "10.200.33.0/29"
-    address_prefix-subnet-rc-elk     = "10.200.33.8/29"
+    address_prefix-subnet-rc-elk          = "10.200.33.8/29"
   }
   mpd-int-vnet-scheme = {
-    address_space_vnet              = "10.200.48.0/20"
-    address_prefix-subnet-ci        = "10.200.48.0/27"
-    address_prefix-subnet-jumpl     = "10.200.48.32/27"
-    address_prefix-subnet-yumrepo   = "10.200.48.64/27"
-    address_prefix-subnet-secret    = "10.200.48.96/27"
-    address_prefix-subnet-artrepo   = "10.200.48.192/27"
-    address_prefix-subnet-secretbe  = "10.200.49.64/27"
-    address_prefix-subnet-ntp       = "10.200.49.128/27"
-    address_prefix-subnet-kali      = "10.200.49.192/27"
-    address_prefix-subnet-migvpn    = "10.200.60.0/29"
-    address_prefix-subnet-clamavmir = "10.200.49.224/27"
-    address_prefix-subnet-vul-scan-cc  = "10.200.60.16/28"
-    address_prefix-subnet-baeci        = "10.203.62.0/24"
-    address_prefix-subnet-wafcc        = "10.200.63.0/28"
-    address_prefix-subnet-zabbix       = "10.200.50.0/27"
-    address_prefix-subnet-appgw2     = "10.200.50.32/27"
-    address_prefix-subnet-appgw3     = "10.200.50.64/27"
-    address_prefix-subnet-elk       = "10.200.50.96/27"
-    address_prefix-subnet-rc-elk     = "10.200.50.128/29"
-    address_prefix-subnet-elkcache   = "10.200.50.136/29"
-    address_prefix_subnet_dynatrace  = "10.200.50.160/28"
-    address_prefix-subnet-pg-pem     = "10.200.50.192/28"
-    address_prefix-subnet-ngf-cc     = "10.200.63.16/29"
-    address_prefix-subnet-appgw1     = "10.200.50.224/27"
+    address_space_vnet                = "10.200.48.0/20"
+    address_prefix-subnet-ci          = "10.200.48.0/27"
+    address_prefix-subnet-jumpl       = "10.200.48.32/27"
+    address_prefix-subnet-yumrepo     = "10.200.48.64/27"
+    address_prefix-subnet-secret      = "10.200.48.96/27"
+    address_prefix-subnet-artrepo     = "10.200.48.192/27"
+    address_prefix-subnet-secretbe    = "10.200.49.64/27"
+    address_prefix-subnet-ntp         = "10.200.49.128/27"
+    address_prefix-subnet-kali        = "10.200.49.192/27"
+    address_prefix-subnet-migvpn      = "10.200.60.0/29"
+    address_prefix-subnet-clamavmir   = "10.200.49.224/27"
+    address_prefix-subnet-vul-scan-cc = "10.200.60.16/28"
+    address_prefix-subnet-baeci       = "10.203.62.0/24"
+    address_prefix-subnet-wafcc       = "10.200.63.0/28"
+    address_prefix-subnet-zabbix      = "10.200.50.0/27"
+    address_prefix-subnet-appgw2      = "10.200.50.32/27"
+    address_prefix-subnet-appgw3      = "10.200.50.64/27"
+    address_prefix-subnet-elk         = "10.200.50.96/27"
+    address_prefix-subnet-rc-elk      = "10.200.50.128/29"
+    address_prefix-subnet-elkcache    = "10.200.50.136/29"
+    address_prefix_subnet_dynatrace   = "10.200.50.160/28"
+    address_prefix-subnet-pg-pem      = "10.200.50.192/28"
+    address_prefix-subnet-ngf-cc      = "10.200.63.16/29"
+    address_prefix-subnet-appgw1      = "10.200.50.224/27"
+    address_prefix-subnet-mgtprx      = "10.200.48.128/27"
   }
   mpd-imz-vnet-scheme = {
     address_space_vnet               = "10.200.64.0/20"
     address_prefix-subnet-ftps-inner = "10.200.64.32/27"
-    address_prefix-subnet-ngf        = "10.200.76.0/28" 
+    address_prefix-subnet-ngf        = "10.200.76.0/28"
 
     address_prefix-subnet-vpn-cms   = "10.200.75.0/29"
     address_prefix-subnet-vpn-darts = "10.200.75.8/29"
@@ -309,13 +310,13 @@ locals {
     address_prefix-subnet-xhbit-ftp = "10.200.65.32/29"
     address_prefix-subnet-psnp-ftp  = "10.200.65.40/29"
 
-    address_prefix-subnet-inbound-proxy = "10.200.66.8/29"
+    address_prefix-subnet-inbound-proxy  = "10.200.66.8/29"
     address_prefix-subnet-outbound-proxy = "10.200.75.24/29"
 
     address_prefix-subnet-azure-vpn-gateways = "10.200.65.160/29"
     address_prefix-azure-vpn-cgi_gateway     = "163.164.232.110"
     address_prefix-subnet-azure-vpn-cgi      = "10.2.80.64/28"
-/*
+    /*
  *  I am sure we can delete those entries ...
  *  address_prefix-subnet-azure-vpn-cgi      = "172.28.165.0/24"
  */
@@ -582,7 +583,7 @@ locals {
     address_prefix-subnet-app-ext-01   = "10.91.67.0/24"
 
     # address_prefix-subnet-web-02  = "10.91.66.0/27"
-    address_prefix-subnet-app-02  = "10.91.66.32/27"
+    address_prefix-subnet-app-02 = "10.91.66.32/27"
     # address_prefix-subnet-data-02 = "10.91.66.64/27"
 
     address_prefix-subnet-rc-common = "10.91.127.224/28"
@@ -649,20 +650,20 @@ locals {
     address_space_vnet        = "10.201.64.0/18"
     address_prefix-subnet-ops = "10.201.64.0/24"
 
-    address_prefix-subnet-web-01  = "10.201.65.0/27"
-    address_prefix-subnet-app-01  = "10.201.65.32/27"
-    address_prefix-subnet-app-ext-01  = "10.201.67.0/24"
-    address_prefix-subnet-app-audit-01 = "10.201.65.128/27"
-    address_prefix-subnet-data-01 = "10.201.65.64/27"
+    address_prefix-subnet-web-01          = "10.201.65.0/27"
+    address_prefix-subnet-app-01          = "10.201.65.32/27"
+    address_prefix-subnet-app-ext-01      = "10.201.67.0/24"
+    address_prefix-subnet-app-audit-01    = "10.201.65.128/27"
+    address_prefix-subnet-data-01         = "10.201.65.64/27"
     address_prefix-subnet-app-ext-wfly-01 = "10.201.65.192/27"
-    address_prefix-subnet-azdata-01 = "10.201.66.0/25"
+    address_prefix-subnet-azdata-01       = "10.201.66.0/25"
 
     address_prefix-subnet-web-02  = "10.201.66.0/27"
     address_prefix-subnet-app-02  = "10.201.66.32/27"
     address_prefix-subnet-data-02 = "10.201.66.64/27"
 
-    address_space_vnet_dmz    = "10.201.192.0/19"
-    address_prefix-subnet-waf = "10.201.192.0/27"
+    address_space_vnet_dmz                = "10.201.192.0/19"
+    address_prefix-subnet-waf             = "10.201.192.0/27"
     address_prefix-subnet-dmz-vul-scanner = "10.201.192.32/28"
 
     address_prefix-subnet-apim-appgw = "10.201.65.128/29"
@@ -672,15 +673,15 @@ locals {
     #= address_prefix-subnet-appgw      = "10.201.65.224/27"
 
     # PAAS subnets
-    address_prefix-subnet-rc-common  = "10.201.68.224/28"
-    address_prefix-subnet-sd-common  = "10.201.68.192/28"
-    address_prefix-subnet-csfl       = "10.201.68.160/28"
-    address_prefix-subnet-blks       = "10.201.68.144/28"
-    address_prefix-subnet-laa        = "10.201.68.128/28"
-    address_prefix-subnet-scsl       = "10.201.68.112/28"
-    address_prefix-subnet-sa-common  = "10.201.68.104/29"
-    address_prefix-subnet-kv-common  = "10.201.68.96/29"
-    address_prefix-subnet-blks-1  = "10.201.68.88/29"
+    address_prefix-subnet-rc-common = "10.201.68.224/28"
+    address_prefix-subnet-sd-common = "10.201.68.192/28"
+    address_prefix-subnet-csfl      = "10.201.68.160/28"
+    address_prefix-subnet-blks      = "10.201.68.144/28"
+    address_prefix-subnet-laa       = "10.201.68.128/28"
+    address_prefix-subnet-scsl      = "10.201.68.112/28"
+    address_prefix-subnet-sa-common = "10.201.68.104/29"
+    address_prefix-subnet-kv-common = "10.201.68.96/29"
+    address_prefix-subnet-blks-1    = "10.201.68.88/29"
   }
   prp-ccm-app-subnets = [
     local.prp-int-vnet-scheme.address_prefix-subnet-app-01,
@@ -690,19 +691,19 @@ locals {
     local.prp-int-vnet-scheme.address_prefix-subnet-app-02
   ]
   prx-int-vnet-scheme = {
-    address_space_vnet        = "10.203.128.0/18"
-    address_prefix-subnet-ops = "10.203.190.0/24"
-    address_prefix-subnet-web-01  = "10.203.128.0/24"
-    address_prefix-subnet-app-01  = "10.203.132.0/24"
+    address_space_vnet                 = "10.203.128.0/18"
+    address_prefix-subnet-ops          = "10.203.190.0/24"
+    address_prefix-subnet-web-01       = "10.203.128.0/24"
+    address_prefix-subnet-app-01       = "10.203.132.0/24"
     address_prefix-subnet-app-audit-01 = "10.203.133.0/27"
-    address_prefix-subnet-data-01 = "10.203.134.0/24"
-    address_prefix-subnet-app-ext-01  = "10.203.136.0/24"
+    address_prefix-subnet-data-01      = "10.203.134.0/24"
+    address_prefix-subnet-app-ext-01   = "10.203.136.0/24"
 
-    address_prefix-subnet-apim-app   = "10.203.180.0/27"
-    address_prefix-subnet-rc-elk     = "10.203.191.152/29"
-    address_prefix-subnet-elkcache   = "10.203.191.160/29"
+    address_prefix-subnet-apim-app = "10.203.180.0/27"
+    address_prefix-subnet-rc-elk   = "10.203.191.152/29"
+    address_prefix-subnet-elkcache = "10.203.191.160/29"
 
-/* - Commented out for now by Ken
+    /* - Commented out for now by Ken
 
     address_prefix-subnet-web-02  = "10.201.66.0/27"
     address_prefix-subnet-app-02  = "10.201.66.32/27"
@@ -717,15 +718,15 @@ locals {
 */
 
     # PAAS subnets
-    address_prefix-subnet-rc-common  = "10.203.180.224/28"
-    address_prefix-subnet-sd-common  = "10.203.180.192/28"
-    address_prefix-subnet-csfl       = "10.203.180.160/28"
-    address_prefix-subnet-blks       = "10.203.180.144/28"
-    address_prefix-subnet-laa        = "10.203.180.128/28"
-    address_prefix-subnet-scsl       = "10.203.180.112/28"
-    address_prefix-subnet-sa-common  = "10.203.180.104/29"
-    address_prefix-subnet-kv-common  = "10.203.180.96/29"
-    address_prefix-subnet-blks-1  = "10.203.180.88/29"
+    address_prefix-subnet-rc-common = "10.203.180.224/28"
+    address_prefix-subnet-sd-common = "10.203.180.192/28"
+    address_prefix-subnet-csfl      = "10.203.180.160/28"
+    address_prefix-subnet-blks      = "10.203.180.144/28"
+    address_prefix-subnet-laa       = "10.203.180.128/28"
+    address_prefix-subnet-scsl      = "10.203.180.112/28"
+    address_prefix-subnet-sa-common = "10.203.180.104/29"
+    address_prefix-subnet-kv-common = "10.203.180.96/29"
+    address_prefix-subnet-blks-1    = "10.203.180.88/29"
   }
   prp-int-bae-vnet-scheme = {
     address_space_vnet        = "10.203.0.0/18"
@@ -735,18 +736,18 @@ locals {
     address_prefix-subnet-app-01  = "10.203.0.64/26"
     address_prefix-subnet-data-01 = "10.203.0.128/27"
 
-    address_prefix-subnet-apim-app   = "10.203.1.0/27"
-    address_prefix-subnet-rc-elk     = "10.203.61.0/29"
+    address_prefix-subnet-apim-app = "10.203.1.0/27"
+    address_prefix-subnet-rc-elk   = "10.203.61.0/29"
     # PAAS subnets
-    address_prefix-subnet-rc-common  = "10.203.4.224/28"
-    address_prefix-subnet-sd-common  = "10.203.4.192/28"
-    address_prefix-subnet-csfl       = "10.203.4.160/28"
-    address_prefix-subnet-blks       = "10.203.4.144/28"
-    address_prefix-subnet-laa        = "10.203.4.128/28"
-    address_prefix-subnet-scsl       = "10.203.4.112/28"
-    address_prefix-subnet-sa-common  = "10.203.4.104/29"
-    address_prefix-subnet-kv-common  = "10.203.4.96/29"
-    address_prefix-subnet-blks-1  = "10.203.4.88/29"
+    address_prefix-subnet-rc-common = "10.203.4.224/28"
+    address_prefix-subnet-sd-common = "10.203.4.192/28"
+    address_prefix-subnet-csfl      = "10.203.4.160/28"
+    address_prefix-subnet-blks      = "10.203.4.144/28"
+    address_prefix-subnet-laa       = "10.203.4.128/28"
+    address_prefix-subnet-scsl      = "10.203.4.112/28"
+    address_prefix-subnet-sa-common = "10.203.4.104/29"
+    address_prefix-subnet-kv-common = "10.203.4.96/29"
+    address_prefix-subnet-blks-1    = "10.203.4.88/29"
   }
   prp-atl-vnet-scheme = {
     address_space_vnet            = "172.30.0.0/16"
@@ -768,36 +769,36 @@ locals {
     address_space_vnet        = "10.202.64.0/18"
     address_prefix-subnet-ops = "10.202.64.0/24"
 
-    address_prefix-subnet-web-01  = "10.202.65.0/27"
-    address_prefix-subnet-app-01  = "10.202.65.32/27"
-    address_prefix-subnet-app-ext-01  = "10.202.67.0/24"
-    address_prefix-subnet-app-audit-01 = "10.202.65.128/27"
-    address_prefix-subnet-data-01 = "10.202.65.64/27"
+    address_prefix-subnet-web-01          = "10.202.65.0/27"
+    address_prefix-subnet-app-01          = "10.202.65.32/27"
+    address_prefix-subnet-app-ext-01      = "10.202.67.0/24"
+    address_prefix-subnet-app-audit-01    = "10.202.65.128/27"
+    address_prefix-subnet-data-01         = "10.202.65.64/27"
     address_prefix-subnet-app-ext-wfly-01 = "10.202.65.192/27"
-    address_prefix-subnet-azdata-01 = "10.202.66.0/25"
+    address_prefix-subnet-azdata-01       = "10.202.66.0/25"
 
     address_prefix-subnet-web-02  = "10.202.66.0/27"
     address_prefix-subnet-app-02  = "10.202.66.32/27"
     address_prefix-subnet-data-02 = "10.202.66.64/27"
 
-    address_space_vnet_dmz    = "10.202.192.0/19"
-    address_prefix-subnet-waf = "10.202.192.0/27"
+    address_space_vnet_dmz                = "10.202.192.0/19"
+    address_prefix-subnet-waf             = "10.202.192.0/27"
     address_prefix-subnet-dmz-vul-scanner = "10.202.192.32/28"
 
     #= address_prefix-subnet-apim-appgw = "10.202.65.128/29"
-    address_prefix-subnet-apim-app   = "10.202.65.96/27"
-    address_prefix-subnet-rc-elk     = "10.202.127.152/29"
-    address_prefix-subnet-elkcache   = "10.202.127.160/29"
+    address_prefix-subnet-apim-app = "10.202.65.96/27"
+    address_prefix-subnet-rc-elk   = "10.202.127.152/29"
+    address_prefix-subnet-elkcache = "10.202.127.160/29"
     # PAAS subnets
-    address_prefix-subnet-rc-common  = "10.202.68.224/28"
-    address_prefix-subnet-sd-common  = "10.202.68.192/28"
-    address_prefix-subnet-csfl       = "10.202.68.160/28"
-    address_prefix-subnet-blks       = "10.202.68.144/28"
-    address_prefix-subnet-laa        = "10.202.68.128/28"
-    address_prefix-subnet-scsl       = "10.202.68.112/28"
-    address_prefix-subnet-sa-common  = "10.202.68.104/29"
-    address_prefix-subnet-kv-common  = "10.202.68.96/29"
-    address_prefix-subnet-blks-1  = "10.202.68.88/29"
+    address_prefix-subnet-rc-common = "10.202.68.224/28"
+    address_prefix-subnet-sd-common = "10.202.68.192/28"
+    address_prefix-subnet-csfl      = "10.202.68.160/28"
+    address_prefix-subnet-blks      = "10.202.68.144/28"
+    address_prefix-subnet-laa       = "10.202.68.128/28"
+    address_prefix-subnet-scsl      = "10.202.68.112/28"
+    address_prefix-subnet-sa-common = "10.202.68.104/29"
+    address_prefix-subnet-kv-common = "10.202.68.96/29"
+    address_prefix-subnet-blks-1    = "10.202.68.88/29"
   }
   prd-ccm-app-subnets = [
     local.prd-int-vnet-scheme.address_prefix-subnet-app-01,
