@@ -23,9 +23,6 @@ locals {
   locations = {
     uks = "uksouth"
     ukw = "ukwest"
-    eas = "eastasia"
-    sea = "southeastasia"
-    cus = "centralus"
   }
   prefixes = {
     api_connection          = "apic"
