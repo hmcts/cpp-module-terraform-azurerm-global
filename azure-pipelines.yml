@@ -1,7 +1,7 @@
 name: CPP module test for global tags
 trigger: none
 pr:
-- dev/EI-884
+- main
 
 resources:
   repositories:
