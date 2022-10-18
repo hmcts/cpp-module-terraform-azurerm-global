@@ -18,13 +18,13 @@ func TestTerraformSubnet(t *testing.T) {
 	}
 
 	// Defer the destroy to cleanup all created resources
-    defer terraform.Destroy(t, terraformOptions)
+        defer terraform.Destroy(t, terraformOptions)
 
 	// This will init and apply the resources and fail the test if there are any errors
 	terraform.InitAndApply(t, terraformOptions)
 
 	// Verify configurations
-    outputOne := terraform.Output(t, terraformOptions, "created_by")
+        outputOne := terraform.Output(t, terraformOptions, "created_by")
 	outputTwo := terraform.Output(t, terraformOptions, "created_time")
 	outputThree := terraform.Output(t, terraformOptions, "domain")
 	assert.Equal(t, "terratestRun", outputOne)
