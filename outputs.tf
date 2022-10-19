@@ -232,13 +232,13 @@ output "prp-rota-vnet-scheme" {
 }
 
 output "prd-rota-vnet-scheme" {
-  value = local.prd-rota-vnet-scheme 
+  value = local.prd-rota-vnet-scheme
 }
 
 output "idam-prp-vnet-scheme" {
-  value = local.idam-prp-vnet-scheme 
+  value = local.idam-prp-vnet-scheme
 }
 
 output "idam-prd-vnet-scheme" {
-  value = local.idam-prd-vnet-scheme 
+  value = local.idam-prd-vnet-scheme
 }
