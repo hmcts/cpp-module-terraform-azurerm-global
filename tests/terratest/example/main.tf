@@ -5,7 +5,7 @@ provider "azurerm" {
 
 
 module "global" {
-  source            = "../../../"
+  source            = "../../.."
   platform          = var.platform
   environment       = var.environment
   tier              = "apps"

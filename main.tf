@@ -231,11 +231,12 @@ locals {
     address_prefix-subnet-azure-vpn-ark-f  = "10.3.80.64/28"
   }
   mdv-sbz-vnet-scheme = {
-    address_space_vnet               = "10.88.160.0/20"
-    address_prefix-subnet-cislave    = "10.88.160.0/27"
-    address_prefix-subnet-alfresco   = "10.88.160.32/27"
-    address_prefix-subnet-alfrescodb = "10.88.160.64/27"
-    address_prefix-subnet-owasp      = "10.88.160.96/27"
+    address_space_vnet                = "10.88.160.0/20"
+    address_prefix-subnet-cislave     = "10.88.160.0/27"
+    address_prefix-subnet-alfresco    = "10.88.160.32/27"
+    address_prefix-subnet-alfrescodb  = "10.88.160.64/27"
+    address_prefix-subnet-owasp       = "10.88.160.96/27"
+    address_prefix-subnet-ado-cislave = "10.88.161.0/24"
   }
   mdv-sbz2-vnet-scheme = {
     address_space_vnet           = "10.88.176.0/24"
@@ -291,6 +292,7 @@ locals {
     address_prefix-subnet-ngf-cc      = "10.200.63.16/29"
     address_prefix-subnet-appgw1      = "10.200.50.224/27"
     address_prefix-subnet-mgtprx      = "10.200.48.128/27"
+    address_prefix-subnet-ado-ci      = "10.200.51.128/25"
   }
   mpd-imz-vnet-scheme = {
     address_space_vnet               = "10.200.64.0/20"
