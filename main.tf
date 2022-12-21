@@ -1,24 +1,33 @@
 locals {
   tags = {
-    domain      = "cpp.nonlive"
-    platform    = var.platform
-    environment = var.environment
-    tier        = var.tier
-    project     = ""
+    tier               = var.tier
+    application        = var.application
+    dataclassification = var.data_classification
+    automation         = jsonencode(var.automation)
+    type               = var.type
+    note               = var.note
   }
   global_tags = {
-    creator         = "SPT/terraform"
-    expiration_date = "none"
-    owner           = "HMCTS-SP"
-    timestamp       = formatdate("DDMMYY", timestamp())
+    platform       = var.platform
+    domain         = var.domain
+    creator        = var.creator
+    expirationDate = var.expiration_date
+    owner          = var.owner
+    criticality    = var.criticality
+    costcentre     = var.costcentre
+    businessArea   = var.business_area
+    environment    = var.environment
+    project        = var.project
+    tier           = var.tier
   }
   global_dynamic_tags = {
     created_time  = var.tag_created_time
     created_by    = var.tag_created_by
-    git_url       = var.tag_git_url
-    git_branch    = var.tag_git_branch
+    builtfrom     = var.tag_git_url
+    builtbranch   = var.tag_git_branch
     last_apply    = var.tag_last_apply
     last_apply_by = var.tag_last_apply_by
+    timestamp     = formatdate("DDMMYY", timestamp())
   }
   locations = {
     uks = "uksouth"

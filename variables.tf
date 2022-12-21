@@ -9,14 +9,89 @@ variable "platform" {
   type        = string
 }
 
+variable "project" {
+  description = "project name"
+  type        = string
+  default     = ""
+}
+
+variable "domain" {
+  description = "Domain Name"
+  type        = string
+  default     = ""
+}
+
 variable "environment" {
   description = "environment e.g. dev"
   type        = string
 }
 
-variable "tier" {
-  description = "tier e.g. ccm "
+variable "application" {
+  description = "Application name - Natural language. Using of dashes between words."
   type        = string
+  default     = ""
+}
+
+variable "business_area" {
+  description = "CFT / Crime / Cross-Cutting"
+  type        = string
+  default     = ""
+}
+
+variable "data_classification" {
+  description = "Public, Confidential, Strictly Confidential, Internal"
+  type        = string
+  default     = ""
+}
+
+variable "automation" {
+  description = "Details on when to backup, stop/start scripts and maintenance window"
+  type        = map(string)
+  default     = {}
+}
+
+variable "costcentre" {
+  description = "What is the charge code for this solution"
+  type        = string
+  default     = ""
+}
+
+variable "tier" {
+  description = "Front End, Back End, Data Layer"
+  type        = string
+}
+
+variable "type" {
+  description = "VM, Storage, service etc"
+  type        = string
+  default     = ""
+}
+
+variable "criticality" {
+  description = "Low, Mid, High. All production Subscription Criticality is High, Dev Subscriptions to be Low or Mid"
+  type        = string
+  default     = ""
+}
+
+variable "note" {
+  description = "This is a sample note"
+  type        = string
+  default     = ""
+}
+
+variable "creator" {
+  type    = string
+  default = "SPT/terraform"
+}
+
+variable "owner" {
+  type    = string
+  default = "HMCTS-SP"
+}
+
+variable "expiration_date" {
+  type    = string
+  default = "none"
 }
 
 #Below values are coming from DSL Jenkins
