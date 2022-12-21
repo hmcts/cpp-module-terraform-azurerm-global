@@ -10,6 +10,7 @@ module "global" {
   environment       = var.environment
   tier              = "apps"
   tag_created_by    = "terratestRun"
+  domain            = "cpp.nonlive"
   tag_created_time  = var.tag_created_time
   tag_git_url       = var.tag_git_url
   tag_git_branch    = var.tag_git_branch
