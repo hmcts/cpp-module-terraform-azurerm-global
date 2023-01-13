@@ -33,9 +33,9 @@ variable "application" {
 }
 
 variable "business_area" {
-  description = "CFT / Crime / Cross-Cutting"
+  description = "Crime only for CPP, it was originally CFT, Crime or Cross-Cutting"
   type        = string
-  default     = ""
+  default     = "Crime"
 }
 
 variable "data_classification" {
