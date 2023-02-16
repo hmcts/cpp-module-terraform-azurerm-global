@@ -125,3 +125,9 @@ variable "tag_last_apply_by" {
   type        = string
   description = "USER ID of the person who is applying the changes"
 }
+
+variable "timestamp" {
+  type        = string
+  description = "timestamp"
+  default     = null
+}
