@@ -27,7 +27,7 @@ locals {
     builtbranch   = var.tag_git_branch
     last_apply    = var.tag_last_apply
     last_apply_by = var.tag_last_apply_by
-    timestamp     = formatdate("DDMMYY", timestamp())
+    timestamp     = var.timestamp != null ? var.timestamp : formatdate("DDMMYY", timestamp())
   }
   locations = {
     uks = "uksouth"
