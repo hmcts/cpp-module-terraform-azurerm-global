@@ -242,3 +242,7 @@ output "idam-prp-vnet-scheme" {
 output "idam-prd-vnet-scheme" {
   value = local.idam-prd-vnet-scheme
 }
+
+output "mpd-int-vnet-scheme" {
+  value = mpd-int-vnet-scheme
+}
