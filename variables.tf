@@ -24,6 +24,11 @@ variable "domain" {
 variable "environment" {
   description = "environment e.g. dev"
   type        = string
+
+  validation {
+    condition     = can(regex("^(lab|dev|nft|nft01|nft02|sit|ste|prx|prp|prd)$", var.environment))
+    error_message = "Invalid input, options: \"lab\", \"dev\", \"nft\", \"nft01\", \"nft02\", \"sit\", \"ste\", \"prx\", \"prp\", \"prd\"."
+  }
 }
 
 variable "application" {
@@ -35,7 +40,11 @@ variable "application" {
 variable "business_area" {
   description = "Crime only for CPP, it was originally CFT, Crime or Cross-Cutting"
   type        = string
-  default     = "Crime"
+
+  validation {
+    condition     = can(regex("^(Crime|Cross-Cutting|CFT)$", var.business_area))
+    error_message = "Invalid input, options: \"Crime\", \"Cross-Cutting\", \"CFT\"."
+  }
 }
 
 variable "data_classification" {
@@ -92,6 +101,11 @@ variable "owner" {
 variable "expiration_date" {
   type    = string
   default = "none"
+
+  validation {
+    condition     = can(regex("^(none|[[:digit:]]{4}-[[:digit:]]{2}-[[:digit:]]{2})$", var.expiration_date))
+    error_message = "Invalid input, options: \"none\", \"YYYY-MM-DD\"."
+  }
 }
 
 #Below values are coming from DSL Jenkins

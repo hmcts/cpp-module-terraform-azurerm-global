@@ -8,6 +8,7 @@ module "global" {
   source            = "../../.."
   platform          = var.platform
   environment       = var.environment
+  business_area     = var.business_area
   tier              = "apps"
   tag_created_by    = "terratestRun"
   domain            = "cpp.nonlive"

@@ -1,14 +1,15 @@
 name: CPP module test for global tags
 trigger: none
 pr:
-- main
+  - main
 
 resources:
   repositories:
-  - repository: cppAzureDevOpsTemplates
-    type: github
-    name: hmcts/cpp-azure-devops-templates
-    endpoint: 'cpp-apps'
+    - repository: cppAzureDevOpsTemplates
+      type: github
+      name: hmcts/cpp-azure-devops-templates
+      endpoint: "hmcts"
+      ref: main
 
 extends:
   template: pipelines/terratest.yaml@cppAzureDevOpsTemplates
