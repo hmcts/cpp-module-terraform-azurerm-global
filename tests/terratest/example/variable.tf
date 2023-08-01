@@ -15,7 +15,7 @@ variable "platform" {
 variable "environment" {
   description = "environment e.g. dev"
   type        = string
-  default     = "terratest"
+  default     = "lab"
 }
 
 variable "tier" {
@@ -60,4 +60,15 @@ variable "tag_last_apply_by" {
   type        = string
   description = "USER ID of the person who is applying the changes"
   default     = "terratest"
+}
+
+variable "expiration_date" {
+  type    = string
+  default = "none"
+}
+
+variable "business_area" {
+  description = "Crime only for CPP, it was originally CFT, Crime or Cross-Cutting"
+  type        = string
+  default     = "Crime"
 }
