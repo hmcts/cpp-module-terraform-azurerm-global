@@ -39,11 +39,12 @@ variable "application" {
 
 variable "business_area" {
   description = "Crime only for CPP, it was originally CFT, Crime or Cross-Cutting"
+  default     = "Crime"
   type        = string
 
   validation {
-    condition     = can(regex("^(Crime|Cross-Cutting|CFT)$", var.business_area))
-    error_message = "Invalid input, options: \"Crime\", \"Cross-Cutting\", \"CFT\"."
+    condition     = can(regex("^(Crime|Cross-Cutting|CFT|Rota|Idam)$", var.business_area))
+    error_message = "Invalid input, options: \"Crime\", \"Cross-Cutting\", \"CFT\", \"Rota\", \"Idam\"."
   }
 }
 
