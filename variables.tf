@@ -26,8 +26,8 @@ variable "environment" {
   type        = string
 
   validation {
-    condition     = can(regex("^(lab|dev|nft|nft01|nft02|sit|sit01|sit02|ste|prx|prp|prd|mdv|mpd)$", var.environment))
-    error_message = "Invalid input, options: \"lab\", \"dev\", \"nft\", \"nft01\", \"nft02\", \"sit\", \"sit01\", \"sit02\", \"ste\", \"prx\", \"prp\", \"prd\", \"mdv\", \"mpd\"."
+    condition     = can(regex("^(lab|dev|dev[0-9][0-9]|nft|nft01|nft02|sit|sit01|sit02|ste|prx|prp|prd|mdv|mpd)$", var.environment))
+    error_message = "Invalid input, options: \"lab\", \"dev\", \"dev[0-9][0-9]\", \"nft\", \"nft01\", \"nft02\", \"sit\", \"sit01\", \"sit02\", \"ste\", \"prx\", \"prp\", \"prd\", \"mdv\", \"mpd\"."
   }
 }
 
