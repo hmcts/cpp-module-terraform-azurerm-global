@@ -24,11 +24,6 @@ variable "domain" {
 variable "environment" {
   description = "environment e.g. dev"
   type        = string
-
-  validation {
-    condition     = can(regex("^(lab|dev|dev[0-9][0-9]|nft|nft01|nft02|sit|sit01|sit02|ste|prx|prp|prd|mdv|mpd)$", var.environment))
-    error_message = "Invalid input, options: \"lab\", \"dev\", \"dev[0-9][0-9]\", \"nft\", \"nft01\", \"nft02\", \"sit\", \"sit01\", \"sit02\", \"ste\", \"prx\", \"prp\", \"prd\", \"mdv\", \"mpd\"."
-  }
 }
 
 variable "application" {
