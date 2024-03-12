@@ -242,3 +242,27 @@ output "idam-prp-vnet-scheme" {
 output "idam-prd-vnet-scheme" {
   value = local.idam-prd-vnet-scheme
 }
+
+output "ste-fn-app-subnets" {
+  value = local.ste-fn-app-subnets
+}
+
+output "dev-fn-app-subnets" {
+  value = local.dev-fn-app-subnets
+}
+
+output "sit-fn-app-subnets" {
+  value = local.sit-fn-app-subnets
+}
+
+output "nft-fn-app-subnets" {
+  value = local.nft-fn-app-subnets
+}
+
+output "prp-fn-app-subnets" {
+  value = local.prp-fn-app-subnets
+}
+
+output "prd-fn-app-subnets" {
+  value = local.prd-fn-app-subnets
+}
