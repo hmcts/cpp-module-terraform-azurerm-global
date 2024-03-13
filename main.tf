@@ -475,7 +475,7 @@ locals {
     address_prefix-subnet-ops = "10.89.64.0/24"
 
     address_prefix-subnet-web-01     = "10.89.65.0/27"
-    address_prefix-subnet-app-01     = "10.89.65.32/27"
+    address_prefix-subnet-app-01     = "10.89.78.0/26"
     address_prefix-subnet-data-01    = "10.89.65.64/27"
     address_prefix-subnet-wfm-gtw-01 = "10.89.65.96/27"
     address_prefix-subnet-wfm-app-01 = "10.89.65.128/27"
