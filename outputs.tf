@@ -247,8 +247,16 @@ output "ste-fn-app-subnets" {
   value = local.ste-fn-app-subnets
 }
 
+output "ste-api-app-subnets" {
+  value = local.ste-api-app-subnets
+}
+
 output "dev-fn-app-subnets" {
   value = local.dev-fn-app-subnets
+}
+
+output "dev-api-app-subnets" {
+  value = local.dev-api-app-subnets
 }
 
 output "sit-fn-app-subnets" {
