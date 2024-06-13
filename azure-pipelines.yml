@@ -9,7 +9,7 @@ resources:
       type: github
       name: hmcts/cpp-azure-devops-templates
       endpoint: "hmcts"
-      ref: 'EI-1799'
+      ref: 'main'
 
 extends:
   template: pipelines/terratest.yaml@cppAzureDevOpsTemplates
