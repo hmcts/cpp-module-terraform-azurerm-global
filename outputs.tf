@@ -207,6 +207,10 @@ output "prx-int-vnet-scheme" {
   value = local.prx-int-vnet-scheme
 }
 
+output "prx-ccm-app-subnets" {
+  value = local.prx-ccm-app-subnets
+}
+
 output "prp-int-bae-vnet-scheme" {
   value = local.prp-int-bae-vnet-scheme
 }
@@ -269,6 +273,10 @@ output "nft-fn-app-subnets" {
 
 output "prp-fn-app-subnets" {
   value = local.prp-fn-app-subnets
+}
+
+output "prx-fn-app-subnets" {
+  value = local.prx-fn-app-subnets
 }
 
 output "prd-fn-app-subnets" {
