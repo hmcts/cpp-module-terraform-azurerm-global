@@ -1098,6 +1098,25 @@ locals {
     local.prp-int-vnet-scheme.address_prefix-subnet-ccp0101-nowsce,
     local.prp-int-vnet-scheme.address_prefix-subnet-ccp0101-nowsce-complex,
   ]
+  prx-fn-app-subnets = [
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0201-bulkscan-pe1,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0201-casefilter,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0201-bulkscan,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0201-legalaidagency,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-nowsce,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0201-scsl,
+    local.prx-int-vnet-scheme.address_prefix-subnet-CCP0202-FA-LAA,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0201-notifyatt,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-courtorders,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-courtreg,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-informantreg,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-legalaid,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-nowsce,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-prisoncourtreg,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-hmpps,
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-nowsce-complex
+  ]
+
   prp-ccm-app-subnets = [
     local.prp-int-vnet-scheme.address_prefix-subnet-app-01,
     local.prp-int-vnet-scheme.address_prefix-subnet-app-ext-01,
@@ -1105,6 +1124,15 @@ locals {
     local.prp-int-vnet-scheme.address_prefix-subnet-app-ext-wfly-01,
     local.prp-int-vnet-scheme.address_prefix-subnet-app-02
   ]
+
+  prx-ccm-app-subnets = [
+    local.prx-int-vnet-scheme.address_prefix-subnet-app-01,
+    local.prx-int-vnet-scheme.address_prefix-subnet-app-ext-01,
+    local.prx-int-vnet-scheme.address_prefix-subnet-app-audit-01
+    # local.prx-int-vnet-scheme.address_prefix-subnet-app-ext-wfly-01,
+    # local.prx-int-vnet-scheme.address_prefix-subnet-app-02
+  ]
+
   prx-int-vnet-scheme = {
     address_space_vnet                 = "10.203.128.0/18"
     address_prefix-subnet-ops          = "10.203.190.0/24"
@@ -1142,7 +1170,27 @@ locals {
     address_prefix-subnet-sa-common = "10.203.180.104/29"
     address_prefix-subnet-kv-common = "10.203.180.96/29"
     address_prefix-subnet-blks-1    = "10.203.180.88/29"
+
+    # Funcation Apps
+    # az network vnet subnet list --resource-group RG-PRP-INT-01 --vnet-name VN-PRP-INT-01 --query "[?delegations[?serviceName=='Microsoft.Web/serverFarms']].{Name:name, Delegated:delegations[0].serviceName, CIDR:addressPrefix}" -o json | jq -r 'map({("address_prefix-subnet-" + (.Name | sub("sn-prp-"; "") | sub("fa-prp-"; "") | sub("SN-PRP-"; "") | sub("fn-prp-"; ""))): .CIDR}) | add | to_entries | .[] | "\(.key) = \"\(.value)\""'
+    address_prefix-subnet-ccp0201-bulkscan-pe1   = "10.203.180.88/29"
+    address_prefix-subnet-ccp0201-casefilter     = "10.203.180.160/28"
+    address_prefix-subnet-ccp0201-bulkscan       = "10.203.180.144/28"
+    address_prefix-subnet-ccp0201-legalaidagency = "10.203.180.128/28"
+    address_prefix-subnet-ccp0101-nowsce         = "10.203.183.64/28"
+    address_prefix-subnet-ccp0201-scsl           = "10.203.180.112/28"
+    address_prefix-subnet-CCP0202-FA-LAA         = "10.203.181.0/27"
+    address_prefix-subnet-ccp0201-notifyatt      = "10.203.180.80/29"
+    address_prefix-subnet-ccp0101-courtorders    = "10.203.183.0/28"
+    address_prefix-subnet-ccp0101-courtreg       = "10.203.183.16/28"
+    address_prefix-subnet-ccp0101-informantreg   = "10.203.183.32/28"
+    address_prefix-subnet-ccp0101-legalaid       = "10.203.183.48/28"
+    address_prefix-subnet-ccp0101-nowsce         = "10.203.183.64/28"
+    address_prefix-subnet-ccp0101-prisoncourtreg = "10.203.183.80/28"
+    address_prefix-subnet-ccp0101-hmpps          = "10.203.183.96/28"
+    address_prefix-subnet-ccp0101-nowsce-complex = "10.203.183.160/27"
   }
+
   prp-int-bae-vnet-scheme = {
     address_space_vnet        = "10.203.0.0/18"
     address_prefix-subnet-ops = "10.203.62.0/24"
