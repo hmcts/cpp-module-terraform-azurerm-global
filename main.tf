@@ -374,6 +374,8 @@ locals {
     # Funcation Apps
     # az network vnet subnet list --resource-group RG-STE-INT-01 --vnet-name VN-STE-INT-01 --query "[?delegations[?serviceName=='Microsoft.Web/serverFarms']].{Name:name, Delegated:delegations[0].serviceName, CIDR:addressPrefix}" -o json | jq -r 'map({("address_prefix-subnet-" + (.Name | sub("sn-ste-"; "") | sub("fa-ste-"; "") | sub("SN-STE-"; ""))): .CIDR}) | add | to_entries | .[] | "\(.key) = \"\(.value)\""'
     address_prefix-subnet-casefilter             = "10.87.1.16/28"
+    address_prefix-subnet-ccm-scsl               = "10.87.1.48/28"
+    address_prefix-subnet-ccp0102-courtreg       = "10.87.1.128/28"
     address_prefix-subnet-sandlspike             = "10.87.4.208/28"
     address_prefix-subnet-deletenow              = "10.87.4.224/28"
     address_prefix-subnet-scan-processor         = "10.87.1.0/28"
@@ -395,6 +397,7 @@ locals {
     address_prefix-subnet-ccp0101-informantreg   = "10.87.50.64/28"
     address_prefix-subnet-ccp0101-courtorders    = "10.87.50.80/28"
     address_prefix-subnet-ccp0101-hmpps          = "10.87.50.96/28"
+    address_prefix-subnet-ccp0102-legalaid       = "10.87.50.112/28"
     address_prefix-subnet-ccp0102-prisoncourtreg = "10.87.50.192/28"
     address_prefix-subnet-ccp0103-courtorders    = "10.87.50.224/28"
     address_prefix-subnet-ccp0103-courtreg       = "10.87.51.0/28"
@@ -479,7 +482,7 @@ locals {
     address_prefix-subnet-ccp0114-courtreg       = "10.87.57.0/26"
     address_prefix-subnet-ccp0115-nowsce-complex = "10.87.57.64/26"
     address_prefix-subnet-ccp0115-courtreg       = "10.87.57.128/26"
-    address_prefix-subnet-ccm-scsl               = "10.87.1.48/28"
+    address_prefix-subnet-ccp0101-dlrm           = "10.87.57.192/27"
   }
   dev-ccm-vnet-scheme = {
     address_space_vnet        = "10.89.64.0/18"
