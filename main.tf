@@ -384,6 +384,8 @@ locals {
     address_prefix-subnet-ccp0103-notifyatt      = "10.87.41.32/28"
     address_prefix-subnet-ccp0103-scsl           = "10.87.41.48/28"
     address_prefix-subnet-ccp0103-legalaidagency = "10.87.41.64/28"
+    address_prefix-subnet-rc-ccp0102             = "10.87.42.0/28"
+    address_prefix-subnet-ccp0104-legalaidagency = "10.87.41.80/28"
     address_prefix-subnet-laa                    = "10.87.1.32/28"
     address_prefix-subnet-ccp0103-bulkscan       = "10.87.41.0/28"
     address_prefix-subnet-ccp0101-bulkscan       = "10.87.1.64/27"
@@ -457,6 +459,8 @@ locals {
     address_prefix-subnet-ccp0110-prisoncourtreg = "10.87.54.128/28"
     address_prefix-subnet-ccp0110-hmpps          = "10.87.54.144/28"
     address_prefix-subnet-ccp0102-nowsce         = "10.87.50.160/27"
+    address_prefix-subnet-ccp0102-nowsce2        = "10.87.50.128/27"
+    address_prefix-subnet-rc-ccm-01              = "10.87.122.0/28"
     address_prefix-subnet-ccp0107-nowsce-complex = "10.87.54.192/28"
     address_prefix-subnet-ccp0109-nowsce-complex = "10.87.54.160/28"
     address_prefix-subnet-ccp0106-nowsce-complex = "10.87.54.208/28"
@@ -627,6 +631,7 @@ locals {
   }
   ste-fn-app-subnets = [
     local.ste-vnet-scheme.address_prefix-subnet-casefilter,
+    local.ste-vnet-scheme.address_prefix-subnet-ccm-scsl,
     local.ste-vnet-scheme.address_prefix-subnet-sandlspike,
     local.ste-vnet-scheme.address_prefix-subnet-deletenow,
     local.ste-vnet-scheme.address_prefix-subnet-scan-processor,
@@ -648,7 +653,10 @@ locals {
     local.ste-vnet-scheme.address_prefix-subnet-ccp0101-informantreg,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0101-courtorders,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0101-hmpps,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0101-dlrm,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0102-legalaid,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0102-prisoncourtreg,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0102-courtreg,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0103-courtorders,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0103-courtreg,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0103-informantreg,
@@ -661,6 +669,7 @@ locals {
     local.ste-vnet-scheme.address_prefix-subnet-ccp0104-legalaid,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0104-nowsce,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0104-prisoncourtreg,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0104-legalaidagency,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0105-courtorders,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0105-courtreg,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0105-informantreg,
@@ -707,6 +716,8 @@ locals {
     local.ste-vnet-scheme.address_prefix-subnet-ccp0110-prisoncourtreg,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0110-hmpps,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0102-nowsce,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0102-nowsce2,
+    local.ste-vnet-scheme.address_prefix-subnet-rc-ccm-01,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0107-nowsce-complex,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0109-nowsce-complex,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0106-nowsce-complex,
@@ -732,7 +743,7 @@ locals {
     local.ste-vnet-scheme.address_prefix-subnet-ccp0114-courtreg,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0115-nowsce-complex,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0115-courtreg,
-    local.ste-vnet-scheme.address_prefix-subnet-ccm-scsl,
+    local.ste-vnet-scheme.address_prefix-subnet-rc-ccp0102,
   ]
   dev-fn-app-subnets = [
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0103-casefilter,
@@ -1426,6 +1437,26 @@ locals {
   ]
 
   dev-api-app-subnets = [
-    "10.89.127.240/29",
+    "10.89.127.248/29",
+  ]
+
+  sit-api-app-subnets = [
+    "10.90.127.240/29",
+  ]
+
+  nft-api-app-subnets = [
+    "10.91.127.0/29",
+  ]
+
+  prp-api-app-subnets = [
+    "10.201.65.96/27",
+  ]
+
+  prd-api-app-subnets = [
+    "10.202.65.96/27",
+  ]
+
+  prx-api-app-subnets = [
+    "10.203.180.0/27",
   ]
 }
