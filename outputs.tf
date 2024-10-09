@@ -263,6 +263,26 @@ output "dev-api-app-subnets" {
   value = local.dev-api-app-subnets
 }
 
+output "sit-api-app-subnets" {
+  value = local.sit-api-app-subnets
+}
+
+output "nft-api-app-subnets" {
+  value = local.nft-api-app-subnets
+}
+
+output "prp-api-app-subnets" {
+  value = local.prp-api-app-subnets
+}
+
+output "prd-api-app-subnets" {
+  value = local.prd-api-app-subnets
+}
+
+output "prx-api-app-subnets" {
+  value = local.prx-api-app-subnets
+}
+
 output "sit-fn-app-subnets" {
   value = local.sit-fn-app-subnets
 }
