@@ -61,14 +61,14 @@ locals {
   }
 
   env_mapping = {
-    management-layer  = ["mgmt", "management", "mdv", "mpd"]
-    production        = ["ptl", "prod", "prod-int", "prx", "prd"]
-    development       = ["dev", "dev01", "dev09", "preview"]
-    staging           = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod"]
-    testing           = ["test", "perftest", "sit", "nft", "nft02"]
-    sandbox           = ["sandbox", "sbox", "ptlsbox", "sbox-int"]
-    demo              = ["demo"]
-    ithc              = ["ithc"]
+    management-layer = ["mgmt", "management", "mdv", "mpd"]
+    production       = ["ptl", "prod", "prod-int", "prx", "prd"]
+    development      = ["dev", "dev01", "dev09", "preview"]
+    staging          = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod"]
+    testing          = ["test", "perftest", "sit", "nft", "nft02"]
+    sandbox          = ["sandbox", "sbox", "ptlsbox", "sbox-int"]
+    demo             = ["demo"]
+    ithc             = ["ithc"]
   }
   azure = {
     resource_group_name       = "RG-${upper(local.env.environment_short_name_lower)}-${upper(local.env.tier_short_name_lower)}-01"
