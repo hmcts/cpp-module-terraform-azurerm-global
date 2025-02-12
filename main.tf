@@ -16,7 +16,7 @@ locals {
     criticality  = var.criticality
     costcentre   = var.costcentre
     businessArea = var.business_area
-    environment  = var.environment
+    environment  = [for x in keys(local.env_mapping) : x if contains(local.env_mapping[x], var.environment)][0]
     project      = var.project
     tier         = var.tier
   }
@@ -58,6 +58,17 @@ locals {
     environment_storage_account_repl_type = "GRS"
     tier_short_name_lower                 = "int"
     environment_dns_resolvers             = []
+  }
+
+  env_mapping = {
+    management-layer = ["mgmt", "management", "mdv", "mpd"]
+    production       = ["ptl", "prod", "prod-int", "prx", "prd"]
+    development      = ["dev", "dev01", "dev09", "preview"]
+    staging          = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod"]
+    testing          = ["test", "perftest", "sit", "nft", "nft02"]
+    sandbox          = ["sandbox", "sbox", "ptlsbox", "sbox-int", "lab"]
+    demo             = ["demo"]
+    ithc             = ["ithc"]
   }
   azure = {
     resource_group_name       = "RG-${upper(local.env.environment_short_name_lower)}-${upper(local.env.tier_short_name_lower)}-01"
