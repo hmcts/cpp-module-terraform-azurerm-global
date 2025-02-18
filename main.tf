@@ -16,7 +16,8 @@ locals {
     criticality  = var.criticality
     costcentre   = var.costcentre
     businessArea = var.business_area
-    environment  = [for x in keys(local.env_mapping) : x if strcontains(for x in keys(local.env_mapping), var.environment)][0]
+    loop         = for x in keys(local.env_mapping)
+    environment  = [var.loop : x if strcontains(var.loop, var.environment)][0]
     project      = var.project
     tier         = var.tier
   }
