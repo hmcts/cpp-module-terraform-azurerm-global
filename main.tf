@@ -62,7 +62,7 @@ locals {
   env_mapping = {
     management-layer = ["mgmt", "management", "mdv", "mpd"]
     production       = ["ptl", "prod", "prod-int", "prx", "prd"]
-    development      = ["dev", "dev01", "dev09", "preview"]
+    development      = ["dev", "preview"]
     staging          = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod"]
     testing          = ["test", "perftest", "sit", "nft", "nft02"]
     sandbox          = ["sandbox", "sbox", "ptlsbox", "sbox-int", "lab"]
