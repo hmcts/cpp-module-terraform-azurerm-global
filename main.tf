@@ -1,4 +1,6 @@
 locals {
+  matching_env_keys = [for x in keys(local.env_mapping) : x if contains(local.env_mapping[x], replace(var.environment, "[0-9]", ""))][0]]
+  
   tags = {
     tier               = var.tier
     application        = var.application
@@ -16,7 +18,7 @@ locals {
     criticality  = var.criticality
     costcentre   = var.costcentre
     businessArea = var.business_area
-    environment  = [for x in keys(local.env_mapping) : x if contains(local.env_mapping[x], replace(var.environment, "[0-9]", ""))][0]
+    environment  = length(local.matching_keys) == 0 ? local.matching_keys[0] : "unassigned"
     project      = var.project
     tier         = var.tier
   }
