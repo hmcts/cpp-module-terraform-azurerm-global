@@ -17,8 +17,8 @@ locals {
     owner        = var.owner
     criticality  = var.criticality
     costcentre   = var.costcentre
-    businessArea = var.business_area
-    environment  = length(local.matching_env_keys) == 1 ? local.matching_env_keys[0] : "unassigned"
+    businessArea = local.matching_env_keys[0]
+    environment  = length(local.matching_env_keys) 
     project      = var.project
     tier         = var.tier
   }
