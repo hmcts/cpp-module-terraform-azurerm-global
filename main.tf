@@ -1,5 +1,5 @@
 locals {
-  matching_env_keys = [for x in keys(local.env_mapping) : x if contains(local.env_mapping["${x}"], replace(var.environment, "[0-9]", ""))]
+  matching_env_keys = [for x in keys(local.env_mapping) : x if contains(local.env_mapping["${x}"], "dev")]
   
   tags = {
     tier               = var.tier
@@ -19,7 +19,7 @@ locals {
     costcentre   = var.costcentre
     businessArea = "${length(local.matching_env_keys)}"
     #length(local.matching_env_keys) == 1 ? local.matching_env_keys[0] : "unassigned"
-    environment  = "${local.env_mapping["development"][0]}"
+    environment  = "${keys(local.env_mapping)[0]}"
     project      = var.project
     tier         = var.tier
   }
