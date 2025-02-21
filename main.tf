@@ -16,7 +16,7 @@ locals {
     expiresAfter = var.expiration_date
     owner        = var.owner
     criticality  = var.criticality
-    costcentre   = var.costcentre
+    costcentre   = "${replace(var.environment, "[0-9]", "")}"
     businessArea = "${length(local.matching_env_keys)}"
     #length(local.matching_env_keys) == 1 ? local.matching_env_keys[0] : "unassigned"
     environment  = "${keys(local.env_mapping)[0]}"
