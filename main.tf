@@ -3,7 +3,7 @@ locals {
   
   tags = {
     tier               = var.tier
-    application        = var.application
+    application        = var.application != "" ? var.application : "unknown"
     dataclassification = var.data_classification
     automation         = jsonencode(var.automation)
     type               = var.type
@@ -18,7 +18,7 @@ locals {
     criticality  = var.criticality
     costcentre   = var.costcentre
     businessArea = var.business_area
-    environment  = length(local.matching_env_keys) == 1 ? local.matching_env_keys[0] : "unassigned"
+    environment  = length(local.matching_env_keys) == 1 ? local.matching_env_keys[0] : "unknown"
     project      = var.project
     tier         = var.tier
   }
@@ -66,7 +66,7 @@ locals {
     production       = ["ptl", "prod", "prod-int", "prx", "prd"]
     development      = ["dev", "preview"]
     staging          = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod"]
-    testing          = ["test", "perftest", "sit", "nft", "nft02"]
+    testing          = ["test", "perftest", "sit", "nft"]
     sandbox          = ["sandbox", "sbox", "ptlsbox", "sbox-int", "lab"]
     demo             = ["demo"]
     ithc             = ["ithc"]
