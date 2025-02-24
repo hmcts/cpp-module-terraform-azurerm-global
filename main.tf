@@ -1,6 +1,6 @@
 locals {
   matching_env_keys = [for x in keys(local.env_mapping) : x if contains(local.env_mapping[x], replace(var.environment, "/[0-9]/", ""))]
-  
+
   tags = {
     tier               = var.tier
     application        = var.application != "" ? var.application : "unknown"
