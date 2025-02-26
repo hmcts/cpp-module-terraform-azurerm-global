@@ -66,7 +66,7 @@ locals {
     production       = ["ptl", "prod", "prod-int", "prx", "prd"]
     development      = ["dev", "preview"]
     staging          = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod"]
-    testing          = ["test", "perftest", "sit", "nft"]
+    testing          = ["test", "perftest", "sit", "nft", "ste"]
     sandbox          = ["sandbox", "sbox", "ptlsbox", "sbox-int", "lab"]
     demo             = ["demo"]
     ithc             = ["ithc"]
