@@ -1,24 +1,27 @@
 locals {
+  matching_env_keys = [for x in keys(local.env_mapping) : x if contains(local.env_mapping[x], replace(var.environment, "/[0-9]/", ""))]
+
   tags = {
     tier               = var.tier
-    application        = var.application
+    application        = var.application != "" ? var.application : "unknown"
     dataclassification = var.data_classification
     automation         = jsonencode(var.automation)
     type               = var.type
     note               = var.note
   }
   global_tags = {
-    platform     = var.platform
-    domain       = var.domain
-    creator      = var.creator
-    expiresAfter = var.expiration_date
-    owner        = var.owner
-    criticality  = var.criticality
-    costcentre   = var.costcentre
-    businessArea = var.business_area
-    environment  = var.environment
-    project      = var.project
-    tier         = var.tier
+    platform          = var.platform
+    domain            = var.domain
+    creator           = var.creator
+    expiresAfter      = var.expiration_date
+    owner             = var.owner
+    criticality       = var.criticality
+    costcentre        = var.costcentre
+    businessArea      = var.business_area
+    environment       = var.environment
+    crime_environment = length(local.matching_env_keys) == 1 ? local.matching_env_keys[0] : "unknown"
+    project           = var.project
+    tier              = var.tier
   }
   global_dynamic_tags = {
     created_time  = var.tag_created_time
@@ -58,6 +61,16 @@ locals {
     environment_storage_account_repl_type = "GRS"
     tier_short_name_lower                 = "int"
     environment_dns_resolvers             = []
+  }
+  env_mapping = {
+    management-layer = ["mgmt", "management", "mdv", "mpd"]
+    production       = ["ptl", "prod", "prod-int", "prx", "prd"]
+    development      = ["dev", "preview"]
+    staging          = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod"]
+    testing          = ["test", "perftest", "sit", "nft", "ste"]
+    sandbox          = ["sandbox", "sbox", "ptlsbox", "sbox-int", "lab"]
+    demo             = ["demo"]
+    ithc             = ["ithc"]
   }
   azure = {
     resource_group_name       = "RG-${upper(local.env.environment_short_name_lower)}-${upper(local.env.tier_short_name_lower)}-01"
