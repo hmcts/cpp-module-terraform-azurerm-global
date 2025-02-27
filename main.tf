@@ -10,18 +10,18 @@ locals {
     note               = var.note
   }
   global_tags = {
-    platform     = var.platform
-    domain       = var.domain
-    creator      = var.creator
-    expiresAfter = var.expiration_date
-    owner        = var.owner
-    criticality  = var.criticality
-    costcentre   = var.costcentre
-    businessArea = var.business_area
-    environment  = var.environment
+    platform          = var.platform
+    domain            = var.domain
+    creator           = var.creator
+    expiresAfter      = var.expiration_date
+    owner             = var.owner
+    criticality       = var.criticality
+    costcentre        = var.costcentre
+    businessArea      = var.business_area
+    environment       = var.environment
     crime_environment = length(local.matching_env_keys) == 1 ? local.matching_env_keys[0] : "unknown"
-    project      = var.project
-    tier         = var.tier
+    project           = var.project
+    tier              = var.tier
   }
   global_dynamic_tags = {
     created_time  = var.tag_created_time
