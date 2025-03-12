@@ -66,7 +66,7 @@ locals {
     management-layer = ["mgmt", "management", "mdv", "mpd"]
     production       = ["ptl", "prod", "prod-int", "prx", "prd"]
     development      = ["dev", "preview"]
-    staging          = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod"]
+    staging          = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod", "nonlive"]
     testing          = ["test", "perftest", "sit", "nft", "ste"]
     sandbox          = ["sandbox", "sbox", "ptlsbox", "sbox-int", "lab"]
     demo             = ["demo"]
