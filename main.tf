@@ -1,5 +1,5 @@
 locals {
-  matching_env_keys = [for x in keys(local.env_mapping) : x if contains(local.env_mapping[x], replace(var.environment, "/[0-9]/", ""))]
+  matching_env_keys = [for x in keys(local.env_mapping) : x if contains(local.env_mapping[x], lower(replace(var.environment, "/[0-9]/", "")))]
 
   tags = {
     tier               = var.tier
@@ -64,9 +64,9 @@ locals {
   }
   env_mapping = {
     management-layer = ["mgmt", "management", "mdv", "mpd"]
-    production       = ["ptl", "prod", "prod-int", "prx", "prd"]
+    production       = ["ptl", "prod", "prod-int", "prx", "prd", "live"]
     development      = ["dev", "preview"]
-    staging          = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod"]
+    staging          = ["ldata", "stg", "aat", "nle", "nonprod", "nonprodi", "prp", "preprod", "nonlive"]
     testing          = ["test", "perftest", "sit", "nft", "ste"]
     sandbox          = ["sandbox", "sbox", "ptlsbox", "sbox-int", "lab"]
     demo             = ["demo"]
