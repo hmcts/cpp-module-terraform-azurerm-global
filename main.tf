@@ -360,6 +360,14 @@ locals {
 
     address_prefix-subnet-imz-vul-scanner = "10.200.66.0/29"
   }
+  nlv-app-conf-vnet-scheme = {
+    address_space_vnet                           = "10.93.0.0/20"
+    address_prefix-subnet-CCP0101-Feature-Toggle = "10.93.1.0/27"
+  }
+  lve-app-conf-vnet-scheme = {
+    address_space_vnet                           = "10.204.0.0/20"
+    address_prefix-subnet-CCP0101-Feature-Toggle = "10.204.1.0/27"
+  }
   ste-vnet-scheme = {
     address_space_vnet               = "10.87.0.0/16"
     address_prefix-subnet-ops        = "10.87.0.0/24"
@@ -500,7 +508,21 @@ locals {
     address_prefix-subnet-ccp0115-nowsce-complex = "10.87.57.64/26"
     address_prefix-subnet-ccp0115-courtreg       = "10.87.57.128/26"
     address_prefix-subnet-ccp0101-dlrm           = "10.87.57.192/27"
+    address_prefix-subnet-ccp0115-nowsce         = "10.87.7.0/27"
+    address_prefix-subnet-ccp0111-hearingres     = "10.87.57.224/27"
+    address_prefix-subnet-ccp0111-hearingres2    = "10.87.58.0/27"
+    address_prefix-subnet-ccp0116-nowsce-complex = "10.87.58.32/27"
+    address_prefix-subnet-ccp0116-courtreg       = "10.87.58.64/27"
+    address_prefix-subnet-ccp0117-nowsce-complex = "10.87.58.96/27"
+    address_prefix-subnet-ccp0117-courtreg       = "10.87.58.128/27"
+    address_prefix-subnet-ccp0118-nowsce-complex = "10.87.58.160/27"
+    address_prefix-subnet-ccp0118-courtreg       = "10.87.58.192/27"
+    address_prefix-subnet-ccp0119-nowsce-complex = "10.87.58.224/27"
+    address_prefix-subnet-ccp0119-courtreg       = "10.87.59.0/27"
+    address_prefix-subnet-ccp0120-nowsce-complex = "10.87.59.32/27"
+    address_prefix-subnet-ccp0120-courtreg       = "10.87.59.64/27"
   }
+
   dev-ccm-vnet-scheme = {
     address_space_vnet        = "10.89.64.0/18"
     address_space_vnet_w      = "10.150.0.0/16"
@@ -641,6 +663,17 @@ locals {
     address_prefix-subnet-ccp0102-nowsce-complex = "10.89.116.48/28"
     address_prefix-subnet-ccp0103-nowsce-complex = "10.89.116.0/28"
     address_prefix-subnet-common-fas             = "10.89.116.128/28"
+    address_prefix-subnet-ccp0103-hearingres     = "10.89.119.64/26"
+    address_prefix-subnet-ccp0106-nowsce         = "10.89.126.16/28"
+    address_prefix-subnet-ccp0105-nowsce         = "10.89.125.64/28"
+    address_prefix-subnet-ccp0105-nowsce-complex = "10.89.125.80/28"
+    address_prefix-subnet-ccp0105-legalaid       = "10.89.125.96/28"
+    address_prefix-subnet-ccp0105-prisoncourtreg = "10.89.125.112/28"
+    address_prefix-subnet-ccp0105-courtreg       = "10.89.125.128/28"
+    address_prefix-subnet-ccp0105-informantreg   = "10.89.125.144/28"
+    address_prefix-subnet-ccp0105-courtorders    = "10.89.125.160/28"
+    address_prefix-subnet-ccp0105-hmpps          = "10.89.125.176/28"
+    address_prefix-subnet-ccp0105-bulkscan       = "10.89.65.32/28"
   }
   ste-fn-app-subnets = [
     local.ste-vnet-scheme.address_prefix-subnet-casefilter,
@@ -653,6 +686,7 @@ locals {
     local.ste-vnet-scheme.address_prefix-subnet-ccp0103-notifyatt,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0103-scsl,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0103-legalaidagency,
+    local.ste-vnet-scheme.address_prefix-subnet-rc-ccp0102,
     local.ste-vnet-scheme.address_prefix-subnet-laa,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0103-bulkscan,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0101-bulkscan,
@@ -748,6 +782,8 @@ locals {
     local.ste-vnet-scheme.address_prefix-subnet-ccp0111-courtreg,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0111-informantreg,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0111-legalaid,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0111-hearingres,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0111-hearingres2,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0112-nowsce-complex,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0112-courtreg,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0113-nowsce-complex,
@@ -756,7 +792,18 @@ locals {
     local.ste-vnet-scheme.address_prefix-subnet-ccp0114-courtreg,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0115-nowsce-complex,
     local.ste-vnet-scheme.address_prefix-subnet-ccp0115-courtreg,
-    local.ste-vnet-scheme.address_prefix-subnet-rc-ccp0102,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0115-nowsce,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0116-nowsce-complex,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0116-courtreg,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0117-nowsce-complex,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0117-courtreg,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0118-nowsce-complex,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0118-courtreg,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0119-nowsce-complex,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0119-courtreg,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0120-nowsce-complex,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0120-courtreg,
+    local.ste-vnet-scheme.address_prefix-subnet-ccp0120-courtreg,
   ]
   dev-fn-app-subnets = [
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0103-casefilter,
@@ -791,6 +838,18 @@ locals {
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0101-nowsce-complex,
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0102-nowsce-complex,
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0103-nowsce-complex,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-common-fas,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0103-hearingres,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0106-nowsce,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-nowsce,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-nowsce-complex,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-legalaid,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-prisoncourtreg,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-courtreg,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-informantreg,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-courtorders,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-hmpps,
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-bulkscan,
   ]
   dev-ccm-app-subnets = [
     local.dev-ccm-vnet-scheme.address_prefix-subnet-app-01,
@@ -1017,6 +1076,18 @@ locals {
     local.nft-ccm-vnet-scheme.address_prefix-subnet-ccp0102-nowsce-complex,
     local.nft-ccm-vnet-scheme.address_prefix-subnet-ccp0102-nowsce,
   ]
+  ste-app-conf-subnets = [
+    local.nlv-app-conf-vnet-scheme.address_prefix-subnet-CCP0101-Feature-Toggle,
+  ]
+  dev-app-conf-subnets = [
+    local.nlv-app-conf-vnet-scheme.address_prefix-subnet-CCP0101-Feature-Toggle,
+  ]
+  sit-app-conf-subnets = [
+    local.nlv-app-conf-vnet-scheme.address_prefix-subnet-CCP0101-Feature-Toggle,
+  ]
+  nft-app-conf-subnets = [
+    local.nlv-app-conf-vnet-scheme.address_prefix-subnet-CCP0101-Feature-Toggle,
+  ]
   dev-rota-vnet-scheme = {
     address_space_vnet        = "10.89.64.0/18"
     address_prefix-subnet-ops = "10.89.64.0/24"
@@ -1141,7 +1212,7 @@ locals {
     local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-nowsce,
     local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-prisoncourtreg,
     local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-hmpps,
-    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-nowsce-complex
+    local.prx-int-vnet-scheme.address_prefix-subnet-ccp0101-nowsce-complex,
   ]
 
   prp-ccm-app-subnets = [
@@ -1290,6 +1361,7 @@ locals {
     address_prefix-subnet-kv-common = "10.202.68.96/29"
     address_prefix-subnet-blks-1    = "10.202.68.88/29"
 
+
     # Funcation Apps
     # az network vnet subnet list --resource-group RG-PRD-INT-01 --vnet-name VN-PRD-INT-01 --query "[?delegations[?serviceName=='Microsoft.Web/serverFarms']].{Name:name, Delegated:delegations[0].serviceName, CIDR:addressPrefix}" -o json | jq -r 'map({("address_prefix-subnet-" + (.Name | sub("sn-prd-"; "") | sub("fa-prd-"; "") | sub("SN-PRD-"; "") | sub("fn-prd-"; ""))): .CIDR}) | add | to_entries | .[] | "\(.key) = \"\(.value)\""'
     address_prefix-subnet-ccp0101-bulkscan-pe1      = "10.202.68.88/29"
@@ -1341,6 +1413,15 @@ locals {
     local.prd-int-vnet-scheme.address_prefix-subnet-app-audit-01,
     local.prd-int-vnet-scheme.address_prefix-subnet-app-ext-wfly-01,
     local.prd-int-vnet-scheme.address_prefix-subnet-app-02
+  ]
+  prx-app-conf-subnets = [
+    local.lve-app-conf-vnet-scheme.address_prefix-subnet-CCP0101-Feature-Toggle,
+  ]
+  prp-app-conf-subnets = [
+    local.lve-app-conf-vnet-scheme.address_prefix-subnet-CCP0101-Feature-Toggle,
+  ]
+  prd-app-conf-subnets = [
+    local.lve-app-conf-vnet-scheme.address_prefix-subnet-CCP0101-Feature-Toggle,
   ]
   prp-rota-vnet-scheme = {
     address_space_vnet        = "10.201.70.0/18"
