@@ -1,5 +1,10 @@
 locals {
-  matching_env_keys = [for x in keys(local.env_mapping) : x if contains(local.env_mapping[x], lower(replace(var.environment, "/[0-9]/", "")))]
+  matching_env_keys = [
+    for x in keys(local.env_mapping) : x
+    if anytrue([
+      for env in local.env_mapping[x] : can(regex(env, lower(var.environment)))
+    ])
+  ]
 
   tags = {
     tier               = var.tier
