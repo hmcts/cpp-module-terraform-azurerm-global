@@ -368,7 +368,6 @@ locals {
     address_space_vnet                           = "10.204.0.0/20"
     address_prefix-subnet-CCP0101-Feature-Toggle = "10.204.1.0/27"
   }
-  }
   ste-vnet-scheme = {
     address_space_vnet               = "10.87.0.0/16"
     address_prefix-subnet-ops        = "10.87.0.0/24"
