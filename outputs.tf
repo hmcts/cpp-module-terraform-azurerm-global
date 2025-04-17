@@ -231,6 +231,34 @@ output "prd-ccm-app-subnets" {
   value = local.prd-ccm-app-subnets
 }
 
+output "ste-app-conf-subnets" {
+  value = local.ste-app-conf-subnets
+}
+
+output "dev-app-conf-subnets" {
+  value = local.dev-app-conf-subnets
+}
+
+output "sit-app-conf-subnets" {
+  value = local.sit-app-conf-subnets
+}
+
+output "nft-app-conf-subnets" {
+  value = local.nft-app-conf-subnets
+}
+
+output "prx-app-conf-subnets" {
+  value = local.prx-app-conf-subnets
+}
+
+output "prp-app-conf-subnets" {
+  value = local.prp-app-conf-subnets
+}
+
+output "prd-app-conf-subnets" {
+  value = local.prd-app-conf-subnets
+}
+
 output "prp-rota-vnet-scheme" {
   value = local.prp-rota-vnet-scheme
 }
