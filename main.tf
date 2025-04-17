@@ -19,7 +19,7 @@ locals {
     costcentre        = var.costcentre
     businessArea      = var.business_area
     environment       = var.environment
-    crime_environment = length(local.matching_env_keys) == 1 ? local.matching_env_keys[0] : "unknown"
+    crime_environment = var.crime_environment != "" ? var.crime_environment : (length(local.matching_env_keys) == 1 ? local.matching_env_keys[0] : "unknown")
     project           = var.project
     tier              = var.tier
   }

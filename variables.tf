@@ -61,6 +61,17 @@ variable "costcentre" {
   default     = ""
 }
 
+variable "crime_environment" {
+  description = "Environment for Crime, mapped to specific infrastructure environments"
+  default     = ""
+  type        = string
+
+  validation {
+    condition     = var.crime_environment == "" || can(regex("^(management-layer|production|development|staging|testing|sandbox|demo|ithc)$", var.crime_environment))
+    error_message = "Invalid input, options: \"\", \"management-layer\", \"production\", \"development\", \"staging\", \"testing\", \"sandbox\", \"demo\", \"ithc\"."
+  }
+}
+
 variable "tier" {
   description = "Front End, Back End, Data Layer"
   type        = string
