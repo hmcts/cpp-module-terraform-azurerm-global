@@ -195,6 +195,7 @@ locals {
     address_prefix-subnet-vpnusers   = "10.88.124.0/22"
     address_prefix-subnet-vpnusers1  = "10.88.120.0/22"
     address_prefix-subnet-vpnusers2  = "10.88.116.0/22"
+    address_prefix-subnet-bastion    = "10.88.114.0/24"
   }
   mdv-int-vnet-scheme = {
     address_space_vnet                 = "10.88.128.0/20"
@@ -294,6 +295,7 @@ locals {
     address_prefix-subnet-dmzntp          = "10.200.32.128/27"
     address_prefix-subnet-dmz-vul-scanner = "10.200.33.0/29"
     address_prefix-subnet-rc-elk          = "10.200.33.8/29"
+    address_prefix-subnet-bastion         = "10.200.34.0/24"
   }
   mpd-int-vnet-scheme = {
     address_space_vnet                = "10.200.48.0/20"
