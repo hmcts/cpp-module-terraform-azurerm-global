@@ -858,12 +858,7 @@ locals {
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-courtorders,
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-hmpps,
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-bulkscan,
-
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0101-bulkscan,
-    
-
-    
-
 
   ]
   dev-ccm-app-subnets = [
