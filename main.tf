@@ -681,6 +681,7 @@ locals {
     address_prefix-subnet-ccp0105-courtorders    = "10.89.125.160/28"
     address_prefix-subnet-ccp0105-hmpps          = "10.89.125.176/28"
     address_prefix-subnet-ccp0105-bulkscan       = "10.89.65.32/28"
+    address_prefix-subnet-ccp0101-bulkscan       = "10.89.126.0/28"
   }
   ste-fn-app-subnets = [
     local.ste-vnet-scheme.address_prefix-subnet-casefilter,
@@ -857,6 +858,13 @@ locals {
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-courtorders,
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-hmpps,
     local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0105-bulkscan,
+
+    local.dev-ccm-vnet-scheme.address_prefix-subnet-ccp0101-bulkscan,
+    
+
+    
+
+
   ]
   dev-ccm-app-subnets = [
     local.dev-ccm-vnet-scheme.address_prefix-subnet-app-01,
