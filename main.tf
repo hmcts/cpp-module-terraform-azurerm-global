@@ -685,6 +685,7 @@ locals {
     address_prefix-subnet-ccp0105-courtorders    = "10.89.125.160/28"
     address_prefix-subnet-ccp0105-hmpps          = "10.89.125.176/28"
     address_prefix-subnet-ccp0105-bulkscan       = "10.89.65.32/28"
+    address_prefix-subnet-ccp0104-fas            = "10.89.116.64/26"
     address_prefix-subnet-ccp0101-bulkscan       = "10.89.126.0/28"
     address_prefix-subnet-ccp0107-nowsce-complex = "10.89.126.32/27"
     address_prefix-subnet-ccp0107-courtreg       = "10.89.126.64/27"
